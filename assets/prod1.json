@@ -1,0 +1,13 @@
+{
+    "id": 1,
+    "nombre": "Moto Z3 Play 64gb",
+    "img": "assets/img/motozplay3.jpg",
+    "img2": "assets/img/motozplay32.jpg",
+    "img3": "assets/img/motozplay33.jpg",
+    "descripcion": "El moto z3 play tiene una pantalla Max Vision Super AMOLED Full HD+ de 6, que se extiende de borde",
+    "categoria": "Celulares",
+    "marca": "Motorola",
+    "precio": 19300,
+    "caracteristicas": "S O: Android 8.1 Oreo. Tipo de pantalla: AMOLED. Memoria RAM: 4gb. Nucles del procesador: Octa-Core",
+    "stock": 8
+}
