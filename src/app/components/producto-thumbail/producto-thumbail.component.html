@@ -1,0 +1,11 @@
+<div class="card prod">
+  <a class="link-none" [routerLink]="['/producto',prod.id]">
+
+    <div class="text-center">
+      <img src="{{prod.img}}" class="img-thumbnail imgMini" alt="Cinque Terre">
+    </div>
+    <div class="card-body">
+      <p>{{prod.nombre}}<br><small class="precio">$ {{prod.precio}}</small></p>
+    </div>
+  </a>
+</div>

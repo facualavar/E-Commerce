@@ -1,0 +1,22 @@
+.btn-tienda{
+    background: rgb(29, 165, 155);
+    border-color: rgb(29, 165, 147);
+    color: #FFF;
+}
+
+.btn-tienda:hover{
+    background: rgb(25, 140, 130);
+    border-color: rgb(25, 140, 130);
+}
+
+h2{
+font-family: 'Fjalla One', sans-serif;
+}
+
+h3{
+font-family: 'Russo One', sans-serif;
+}
+
+p,label{
+    font-family: 'Open Sans Condensed', sans-serif;
+}

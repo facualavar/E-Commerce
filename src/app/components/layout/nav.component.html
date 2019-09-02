@@ -1,0 +1,62 @@
+<div class="top row">
+  <span class="navbar-text offset-1"><i class="far fa-envelope"></i> info@jujuycalulares.com </span>
+  <span class="navbar-text">&nbsp; | &nbsp;</span>
+  <span class="navbar-text"> <i class="fas fa-phone"></i> +54 (388) 4713223 </span>
+</div>
+<br>
+<nav class="navbar navbar-expand-lg navbar-light row">
+  <div class="col-12 col-md-8 offset-md-2">
+
+    <div class="row">
+      <a class="navbar-brand" href="#"><img src="assets/img/logo.png" height="70px" alt=""></a>
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['home']" routerLinkActive="active" href="#"> Bienvenido <span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['prods']" routerLinkActive="active"> Celulares </a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="(authenticationService.userLoggedInPerfil == 'administrador')&&(authenticationService.userLoggedIn)">
+
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"> Administrador</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" [routerLink]="['stock']" routerLinkActive="active"> Gestion Productos </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" [routerLink]="['user']" routerLinkAcive="active"> Gestion Usuarios </a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="['about']" routerLinkAcive="active">About us</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="['contact']" routerLinkAcive="active">Contactanos</a></li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['cart']" routerLinkActive="active">Mi Carrito<i
+                class="fas fa-shopping-cart"></i></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">Mi cuenta <i class="fas fa-user"></i></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a *ngIf="!authenticationService.userLoggedIn" class="dropdown-item" [routerLink]="['login']">Ingresar</a>
+              <span *ngIf="authenticationService.userLoggedIn"
+                class="navbar-text dropdown-item">{{authenticationService.userLogged.nombres}}</span>
+              <div class="dropdown-divider"></div>
+              <a *ngIf="!authenticationService.userLoggedIn" class="dropdown-item"
+                [routerLink]="['registro']">Registrarse</a>
+              <a *ngIf="authenticationService.userLoggedIn" class="dropdown-item" [routerLink]="['login']"
+                (click)="logout()">Salir</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,27 @@
+nav{
+    background: #FFF;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.active{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(73, 203, 233);
+    border-radius: 50px;
+    color: rgb(73, 203, 233);
+}
+
+.top{
+    background: rgb(46, 46, 46);
+    color: #FFF;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+a{
+    color: #000;
+    font-size: 20px;
+}
+
+a:hover{
+    color: rgb(73, 203, 233);
+}

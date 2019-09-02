@@ -1,0 +1,104 @@
+<div class="container text-center">
+    <h1>Listado Productos</h1>
+    <table>
+        <thead>
+            <th>Producto</th>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prod of productos">
+                <td>{{prod.nombre}}</td>
+                <td>{{prod.marca}}</td>
+                <td>{{prod.precio}}</td>
+                <td>{{prod.stock}}</td>
+                <td>
+                    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editarProdModal"
+                        (click)="editar(prod)">Editar</button>
+                    <button class="btn btn-danger" (click)="borrarProd(prod.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal Editar -->
+    <div class="modal fade" id="editarProdModal" tabindex="-1" role="dialog" aria-labelledby="editarProdModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Editar Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" [(ngModel)]="productoSelected.nombre"
+                                name="nombre">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="cat">Categoria</label>
+                                    <input type="text" class="form-control" id="cat"
+                                        [(ngModel)]="productoSelected.categoria" name="cat">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="marca">Marca</label>
+                                    <input type="text" class="form-control" id="marca"
+                                        [(ngModel)]="productoSelected.marca" name="marca">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="img">Subir Imagen</label>
+                            <input type="file" name="myImage" accept="image/jpeg" (change)="subiendoando($event)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="descrip">Descripcion</label>
+                            <input type="text" class="form-control" id="descrip"
+                                [(ngModel)]="productoSelected.descripcion" name="descrip">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="caract">Caracteristicas</label>
+                            <textarea class="form-control" id="caract" name="caract"
+                                [(ngModel)]="productoSelected.caracteristicas" rows="5"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="precio">Precio</label>
+                                    <input type="number" class="form-control" id="precio"
+                                        [(ngModel)]="productoSelected.precio" name="precio">
+                                        <small id="precioHelp" class="form-text text-muted">En pesos Argentinos (ARS)</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="stock">Stock</label>
+                                    <input type="number" class="form-control" id="stock"
+                                        [(ngModel)]="productoSelected.stock" name="stock">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" (click)="editarProd()" data-dismiss="modal">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-producto-nuevo></app-producto-nuevo>
+</div>

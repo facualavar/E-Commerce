@@ -1,0 +1,140 @@
+<div class="container">
+  <h1>Listado Usuarios</h1>
+  <button type="button" class="btn btn-info" (click)="nuevo()" data-toggle="modal" data-target="#nuevouserModal">Nuevo</button>
+
+  <table>
+    <thead>
+      <th>Usuario</th>
+      <th>Nombre y apellido</th>
+      <th>Perfil</th>
+      <th>Email</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usuarios">
+        <td>{{user.usuario}}</td>
+        <td>{{user.nombres}} {{user.apellido}}</td>
+        <td>{{user.perfil}}</td>
+        <td>{{user.email}}</td>
+        <td>
+          <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editaruserModal"
+            (click)="editar(user)">Editar</button>
+          <button class="btn btn-danger" (click)="borrarUsu(user.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal Editar -->
+  <div class="modal fade" id="editaruserModal" tabindex="-1" role="dialog" aria-labelledby="editaruserModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Editar usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="form-group">
+              <label for="nombre">Nombres</label>
+              <input type="text" class="form-control" id="nombre" [(ngModel)]="usuarioSelected.nombres" name="nombre">
+            </div>
+
+            <div class="form-group">
+              <label for="apellido">Apellido</label>
+              <input type="text" class="form-control" id="apellido" [(ngModel)]="usuarioSelected.apellido"
+                name="apellido">
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="user">Usuario</label>
+                  <input type="text" class="form-control" id="user" [(ngModel)]="usuarioSelected.usuario" name="user">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="perfil">Perfil</label>
+                  <input type="text" class="form-control" id="perfil" [(ngModel)]="usuarioSelected.perfil"
+                    name="perfil">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="pass">Contraseña</label>
+              <input type="text" class="form-control" id="pass" [(ngModel)]="usuarioSelected.password" name="pass">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email" [(ngModel)]="usuarioSelected.email" name="email">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="editarUsu()" data-dismiss="modal">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Nuevo -->
+  <div class="modal fade" id="nuevouserModal" tabindex="-1" role="dialog" aria-labelledby="nuevouserModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Nuevo usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="form-group">
+              <label for="nombre">Nombres</label>
+              <input type="text" class="form-control" id="nombre" [(ngModel)]="usuarioNuevo.nombres" name="nombre">
+            </div>
+
+            <div class="form-group">
+              <label for="apellido">Apellido</label>
+              <input type="text" class="form-control" id="apellido" [(ngModel)]="usuarioNuevo.apellido"
+                name="apellido">
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="user">Usuario</label>
+                  <input type="text" class="form-control" id="user" [(ngModel)]="usuarioNuevo.usuario" name="user">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="perfil">Perfil</label>
+                  <input type="text" class="form-control" id="perfil" [(ngModel)]="usuarioNuevo.perfil"
+                    name="perfil">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="pass">Contraseña</label>
+              <input type="text" class="form-control" id="pass" [(ngModel)]="usuarioNuevo.password" name="pass">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email" [(ngModel)]="usuarioNuevo.email" name="email">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="nuevoUsu()" data-dismiss="modal">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

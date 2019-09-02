@@ -1,0 +1,17 @@
+a{
+    color: rgb(0, 0, 0);
+}
+
+a:hover{
+    color: rgb(73, 203, 233);
+}
+
+h2{
+font-family: 'Russo One', sans-serif;
+}
+
+.card{
+    margin: 40px 0px;
+    padding: 50px;
+    font-family: 'Fira Sans', sans-serif;
+}

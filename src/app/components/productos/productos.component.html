@@ -1,0 +1,70 @@
+<div class="row primero">
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-header">
+        <h4>Filtros</h4>
+      </div>
+      <div class="card-body">
+        <br><br>
+        <div class="row justify-content-center">
+          <div class="">
+            <div class="">
+              <h5 class="">Marca</h5>
+              <hr>
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="check1" value="motorola" (click)="filtroMarca($event)" checked>
+                  <label class="custom-control-label" for="check1">Motorola</label>
+              </div>
+              <br>
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="check2" value="samsung" (click)="filtroMarca($event)" checked>
+                  <label class="custom-control-label" for="check2">Samsung</label>
+              </div>
+              <br>
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="check3" value="huawei" (click)="filtroMarca($event)" checked>
+                  <label class="custom-control-label" for="check3">Huawei</label>
+              </div>
+              <br>
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="check4" value="xiaomi" (click)="filtroMarca($event)" checked>
+                  <label class="custom-control-label" for="check4">Xiaomi</label>
+              </div>
+              <br>
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="check5" value="lg" (click)="filtroMarca($event)" checked>
+                  <label class="custom-control-label" for="check5">LG</label>
+              </div>
+              <br>
+              <button type="button" class="btn btn-outline-secondary" (click)="filtrar(buscado.value)">Aplicar Filtros</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container col-sm-9" id="contendorProductos">
+
+    <div class="row justify-content-between ">
+      <div class="align-self-end">
+        <h5 class="">{{productos.length}} Productos</h5>
+      </div>
+      <nav class="navbar navbar-expand-sm">
+        <form class="form-inline" action="">
+          <input name="filtro" class="form-control mr-sm-2" type="text" placeholder="Search" #buscado>
+          <button (click)="filtrar(buscado.value)" class="btn btn-outline-info" type="submit">Buscar</button>
+        </form>
+      </nav>
+    </div>
+    <br>
+    <div class="row">
+      
+      <app-producto-thumbail [prod]="prod" class="col-sm-3" *ngFor="let prod of productosmostrar">
+
+      </app-producto-thumbail>
+      
+    </div>
+  </div>
+</div>

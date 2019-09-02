@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <h2>{{producto.nombre}}</h2>
+    <small>{{producto.marca}}</small>
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+      <div class="row">
+        <div class="col-4 col-md-12">
+          <a (click)="imgPrincipal=producto.img">
+            <img src="{{producto.img}}" alt="Imagen 1" class="rounded img-thumbnail mx-auto d-block">
+          </a>
+        </div>
+        <div class="col-4 col-md-12">
+          <a (click)="imgPrincipal=producto.img2">
+            <img src="{{producto.img2}}" alt="Imagen 2" class="rounded img-thumbnail mx-auto d-block">
+          </a>
+        </div>
+        <div class="col-4 col-md-12">
+          <a (click)="imgPrincipal=producto.img3">
+            <img src="{{producto.img3}}" alt="Imagen 3" class="rounded img-thumbnail mx-auto d-block">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 img-principal">
+      <img src="{{imgPrincipal}}" alt="Imgagen del producto" class="rounded img-fluid mx-auto d-block">
+    </div>
+    <div class="col-md-3">
+      <div class="row">
+        <form #f="ngForm">
+          <div class="form-group">
+            <label for="precio">Precio: ${{producto.precio}}</label>
+          </div>
+          <div class="form-group">
+            <label for="cant">Cantidad</label>
+            <input type="number" class="form-control" name="cantvalue" value="1" #cant="ngModel" ngModel required>
+          </div>
+          <div>
+            <button [disabled]="!f.valid || (cant.value<=0)" type="submit" class="btn btn-lg btn-tienda"
+              (click)="agregarCarrito(producto, cant.value )">Agregar al Carrito</button>
+          </div>
+          <div *ngIf="agregado" class="alert alert-success alert-dismissible fade show" role="alert">Agregado
+            correctamente<button (click)="agregado=!agregado" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="descrip">
+      <h3>Descripcion</h3>
+      <p>{{producto.descripcion}}</p>
+    </div>
+    <div class="caract">
+      <h3>Caracteristicas</h3>
+      <p>{{producto.caracteristicas}}</p>
+    </div>
+  </div>
+
+</div>
