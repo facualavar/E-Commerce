@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { Producto } from './../../modelo/producto';
-import { ProductoService } from './../../servicios/producto.service';
-import { CartService } from 'src/app/servicios/cart.service';
+import { Producto } from './../../../modelo/producto';
+import { ProductoService } from './../../../servicios/producto.service'
+import { CartService } from './../../../servicios/cart.service';
 
 import { from } from 'rxjs';
 

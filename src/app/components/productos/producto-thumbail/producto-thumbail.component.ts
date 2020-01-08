@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Producto } from 'src/app/modelo/producto';
+import { Producto } from './../../../modelo/producto';
 
 @Component({
   selector: 'app-producto-thumbail',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Producto } from './../../modelo/producto';
-import { ProductoService } from './../../servicios/producto.service';
+import { Producto } from './../../../modelo/producto';
+import { ProductoService } from './../../../servicios/producto.service';
 import { from } from 'rxjs';
 import { $ } from 'protractor';
 
@@ -62,7 +62,7 @@ export class ProductosComponent implements OnInit {
           }
         }
 
-      }                 
+      }
     }
 
     this.productosmostrar = result;

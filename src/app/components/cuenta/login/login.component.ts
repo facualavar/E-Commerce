@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthenticationService } from './../../servicios/authentication.service';
-import { Usuario } from './../../modelo/usuario';
+import { Usuario } from './../../../modelo/usuario';
+import { AuthenticationService } from './../../../servicios/authentication.service';
+
 
 @Component({
   selector: 'app-login',
@@ -24,10 +24,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-  }
-
-  registro(){
-    this.router.navigateByUrl('/registro');
   }
 
   login() {

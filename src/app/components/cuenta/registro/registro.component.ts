@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from './../../modelo/usuario'
-import { UsuarioService } from './../../servicios/usuario.service'
-import { Router, ActivatedRoute } from '@angular/router';
+import { Usuario } from './../../../modelo/usuario';
+import { UsuarioService } from './../../../servicios/usuario.service'
+import { Router, ActivatedRoute } from '@angular/router';
 import { from } from 'rxjs';
 
 @Component({
@@ -18,10 +18,10 @@ export class RegistroComponent implements OnInit {
   mismapass: boolean = false;
 
   constructor(
-    private usuarioServicio: UsuarioService,
-    private route: ActivatedRoute,
-    private router: Router
-  ) { }
+    private route: ActivatedRoute,
+    private router: Router,
+    private usuarioServicio: UsuarioService
+    ) { }
 
   verficarpass() {
     if (this.pass == this.usuarioNuevo.password) {
@@ -50,7 +50,7 @@ export class RegistroComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
 }
